@@ -2,11 +2,14 @@
 
 import re
 
+# This function reads the data from the given file
 def read_data(file_path):
     with open(file_path, "r") as f:
         data=f.read()
     return data
 
+
+# This function gets the count of each item in the we get in the data read from the file
 def get_item_counts(data):
     item_count = {}
     for i in data:
@@ -17,7 +20,7 @@ def get_item_counts(data):
     return item_count
 
 
-#Updated solution taken from here for correct url - https://www.hackingnote.com/en/python-challenge-solutions/level-2/index.html
+# Updated solution taken from here for correct url - https://www.hackingnote.com/en/python-challenge-solutions/level-2/index.html
 def get_next_challenge_url(data):
     next_page = "".join(re.findall("[A-Za-z]", data))
     return "http://www.pythonchallenge.com/pc/def/" + next_page + ".html"
