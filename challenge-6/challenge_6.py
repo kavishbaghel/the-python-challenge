@@ -1,3 +1,5 @@
+#Challenge 5: http://www.pythonchallenge.com/pc/def/channel.html
+
 import zipfile
 import re
 import requests

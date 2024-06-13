@@ -1,3 +1,5 @@
+#Challenge 5: http://www.pythonchallenge.com/pc/def/oxygen.html
+
 import PIL.Image
 import requests
 import re
@@ -16,12 +18,9 @@ def extract_data_from_image(image):
     row=row[::7]
     ords = [r for r, g, b, a in row if r==g==b]
     chrs = "".join(map(chr, ords))
-    data = "".join(re.findall("[\[1-9][\,][\" \"]]", chrs))
-    print(data)
+    print(chrs)
 
 def get_next_challenge_url(ords):
-    #code
-    return None
-
-
-extract_data_from_image("oxygen.png")
+    data = "".join(map(chr, ords))
+    url = "http://www.pythonchallenge.com/pc/def/" + data + ".html"
+    print("The next challenge url is - " + url)
